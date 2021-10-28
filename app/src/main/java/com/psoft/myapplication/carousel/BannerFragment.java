@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.psoft.myapplication.Banners;
 import com.psoft.myapplication.R;
 
 import java.util.ArrayList;
@@ -24,7 +26,13 @@ public class BannerFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putInt("position", position);
         bundle.putFloat("scale", scale);
+
+        ArrayList<String> urls=new ArrayList<>();
+
+
+
         bundle.putStringArrayList("urls",imageUrl);
+
 
         return Fragment.instantiate(context, BannerFragment.class.getName(), bundle);
     }
@@ -50,12 +58,22 @@ public class BannerFragment extends Fragment {
 
         ImageView img= linearLayout.findViewById(R.id.urlImage);
 
+
+
         ArrayList<String> urls= this.getArguments().getStringArrayList("urls");
 
-        Glide.with(requireContext())
-                .load(urls.get(position))
-                .centerCrop()
-                .into(img);
+       try {
+           Glide.with(requireContext())
+                   .load(urls.get(position))
+                   .centerCrop()
+                   .into(img);
+       }catch(Exception e)
+       {
+           Glide.with(requireContext())
+                   .load(urls.get(0))
+                   .centerCrop()
+                   .into(img);
+       }
 
 
         return linearLayout;

@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.psoft.myapplication.Banners;
 import com.psoft.myapplication.R;
 
 import java.util.ArrayList;
