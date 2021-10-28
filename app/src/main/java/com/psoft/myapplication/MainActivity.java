@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.activity_main_view_pager);
 
 
-        ArrayList<String> images=new ArrayList<>();
+        ArrayList<Banners> images=new ArrayList<>();
 
         images.add("https://visme.co/blog/wp-content/uploads/2019/08/header-1200.gif");
         images.add("https://academics.design.ncsu.edu/yesand/wp-content/uploads/2017/11/Coca-Cola-1024x663.png");
